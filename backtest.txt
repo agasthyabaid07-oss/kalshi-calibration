@@ -1,0 +1,36 @@
+================================================================
+BACKTEST - trading 24h before close, 100 contracts per trade
+Training: 640 markets up to 2026-09-03 | Testing: 426 markets after
+================================================================
+
+STRATEGY: FADE LONGSHOTS
+Training results by threshold:
+   threshold 0.03: trades=   69 events=   41 win=100.0% PnL=$    74.26 fees=$   5.64 ROC=+1.09% per-contract=+1.08c t=+7.61 maxDD=$0.00
+   threshold 0.05: trades=  123 events=   73 win= 97.6% PnL=$  -117.71 fees=$  13.71 ROC=-0.97% per-contract=-0.96c t=-0.69 maxDD=$-287.91
+   threshold 0.08: trades=  190 events=  111 win= 96.3% PnL=$  -210.80 fees=$  35.90 ROC=-1.14% per-contract=-1.11c t=-0.82 maxDD=$-420.72
+   threshold 0.10: trades=  217 events=  120 win= 96.3% PnL=$  -149.14 fees=$  47.34 ROC=-0.71% per-contract=-0.69c t=-0.56 maxDD=$-423.91
+   threshold 0.15: trades=  253 events=  130 win= 95.7% PnL=$  -109.03 fees=$  70.23 ROC=-0.45% per-contract=-0.43c t=-0.32 maxDD=$-472.76
+   threshold 0.20: trades=  287 events=  139 win= 94.1% PnL=$  -215.14 fees=$ 101.34 ROC=-0.79% per-contract=-0.75c t=-0.47 maxDD=$-615.40
+   threshold 0.25: trades=  320 events=  152 win= 91.9% PnL=$  -452.77 fees=$ 140.07 ROC=-1.52% per-contract=-1.41c t=-0.87 maxDD=$-690.54
+Chosen threshold (from training only): 0.03
+OUT-OF-SAMPLE TEST: trades=   28 events=   15 win= 89.3% PnL=$  -268.29 fees=$   2.39 ROC=-9.70% per-contract=-9.58c t=-1.67 maxDD=$-273.03
+   -> Not profitable after fees and spreads. An honest, valid finding.
+
+STRATEGY: BACK FAVORITES
+Training results by threshold:
+   threshold 0.03: trades=   15 events=   15 win=100.0% PnL=$    17.94 fees=$   1.36 ROC=+1.21% per-contract=+1.20c t=+8.85 maxDD=$0.00
+   threshold 0.05: trades=   25 events=   24 win=100.0% PnL=$    43.72 fees=$   3.28 ROC=+1.78% per-contract=+1.75c t=+6.22 maxDD=$0.00
+   threshold 0.08: trades=   49 events=   44 win=100.0% PnL=$   145.02 fees=$  10.58 ROC=+3.06% per-contract=+2.96c t=+8.48 maxDD=$0.00
+   threshold 0.10: trades=   55 events=   48 win=100.0% PnL=$   180.61 fees=$  13.09 ROC=+3.40% per-contract=+3.28c t=+8.22 maxDD=$0.00
+   threshold 0.15: trades=   68 events=   55 win=100.0% PnL=$   311.83 fees=$  21.87 ROC=+4.82% per-contract=+4.59c t=+6.84 maxDD=$0.00
+   threshold 0.20: trades=   86 events=   68 win= 98.8% PnL=$   485.67 fees=$  39.03 ROC=+6.09% per-contract=+5.65c t=+4.10 maxDD=$-84.95
+   threshold 0.25: trades=  109 events=   76 win= 94.5% PnL=$   422.74 fees=$  64.96 ROC=+4.31% per-contract=+3.88c t=+1.64 maxDD=$-144.33
+Chosen threshold (from training only): 0.20
+OUT-OF-SAMPLE TEST: trades=   57 events=   32 win= 93.0% PnL=$   -86.83 fees=$  20.93 ROC=-1.62% per-contract=-1.52c t=-0.37 maxDD=$-187.86
+   -> Not profitable after fees and spreads. An honest, valid finding.
+
+COST BREAKDOWN on all data, fade longshots at 0.10:
+   Profit if you could trade at the mid price: $-118.25
+   minus half-spread paid:                      $373.45
+   minus Kalshi fees:                           $61.68
+   = Real profit:                               $-553.38

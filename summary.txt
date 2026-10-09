@@ -1,0 +1,50 @@
+================================================================
+KALSHI CALIBRATION STUDY - price 24h before close
+================================================================
+Markets: 1066 | Events: 376 | Overall YES rate: 38.6% | Avg price: 37.1%
+
+1. CALIBRATION TABLE
+price_bucket   n  avg_price  yes_rate  ci_low  ci_high    gap
+       0-10c 296      0.044     0.047   0.028    0.078  0.003
+      10-20c 129      0.145     0.116   0.072    0.183 -0.029
+      20-30c 129      0.254     0.256   0.188    0.337  0.002
+      30-40c  87      0.351     0.460   0.359    0.564  0.109
+      40-50c  75      0.455     0.413   0.309    0.526 -0.042
+      50-60c  76      0.552     0.579   0.467    0.684  0.027
+      60-70c  56      0.648     0.732   0.604    0.830  0.084
+      70-80c  75      0.751     0.733   0.624    0.820 -0.017
+      80-90c  49      0.846     0.939   0.835    0.979  0.093
+     90-100c  94      0.956     0.979   0.926    0.994  0.023
+
+2. ACCURACY SCORES
+Brier score: 0.1328  (95% CI 0.1185 to 0.1489); always guessing 50% scores 0.25
+   Reliability (calibration error): 0.0021
+   Resolution (information):         0.1057
+   Uncertainty (difficulty):         0.2369
+Log loss: 0.4122  (always guessing 50% scores 0.693)
+
+3. FAVORITE-LONGSHOT TEST (gap = actual YES rate - average price)
+   Longshots (price < 15c)    n=   366  gap=+0.000  95% CI [-0.022, +0.026]  not significant
+   Middle (15c-85c)           n=   583  gap=+0.020  95% CI [-0.014, +0.053]  not significant
+   Favorites (price > 85c)    n=   117  gap=+0.035  95% CI [-0.010, +0.064]  not significant
+
+4. RECALIBRATION SLOPE (1.0 = perfect; >1 = favorite-longshot bias; <1 = prices too extreme)
+   intercept a = +0.145, slope b = 1.085  (95% CI 0.967 to 1.247)
+
+5. BY CATEGORY
+   Entertainment        n=   130  Brier=0.0730  calibration error=0.0141
+   Financials           n=    50  Brier=0.0423  calibration error=0.0112
+   Mentions             n=   166  Brier=0.1621  calibration error=0.0037
+   Sports               n=   551  Brier=0.1543  calibration error=0.0009
+
+6. BY LIQUIDITY (trading volume)
+   High volume          n=   337  Brier=0.1594  calibration error=0.0014
+   Low volume           n=   367  Brier=0.1030  calibration error=0.0023
+   Mid volume           n=   362  Brier=0.1383  calibration error=0.0035
+
+(Time comparison uses only the 176 markets priced at all 3 snapshot times.)
+
+7. BY TIME BEFORE CLOSE (hours, same markets)
+   1                    n=   176  Brier=0.0897  calibration error=0.0059
+   24                   n=   176  Brier=0.0963  calibration error=0.0033
+   168                  n=   176  Brier=0.1015  calibration error=0.0062
